@@ -1,7 +1,7 @@
 from googlemaps import Client
 
 # Add you API key here
-mapService = Client(key='AIzaSyDZyqHCijWTWK1j8dhisZ0ba47qH3oSFaA')
+mapService = Client(key='your key here')
 
 directions = mapService.directions('Disneyland', 'Universal Studios Hollywood')
 directions = directions[0]

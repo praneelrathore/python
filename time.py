@@ -1,12 +1,14 @@
 from googlemaps import Client
 
-# Add you API key here
-mapService = Client(key='your key here')
-
-directions = mapService.directions('Disneyland', 'Universal Studios Hollywood')
+mapService = Client('Your key here')
+source = 'Kronos Solutions India Pvt Ltd'
+destination = 'Gaur Grandeur'
+directions = mapService.directions(source, destination)
+print len(directions)
 directions = directions[0]
 
-i=1
+
+i = 1
 for leg in directions['legs']:
     duration = leg['duration']
     print duration['text']
@@ -17,5 +19,4 @@ for leg in directions['legs']:
     for step in leg['steps']:
         html_instructions = step['html_instructions']
         duration = step['duration']
-        #print "STEP {} {}".format(i ,html_instructions)
-        i = i+1
+        i = i + 1
